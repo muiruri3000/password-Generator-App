@@ -1,4 +1,7 @@
 
+
+
+//Initialize Global Values. 
 const inputDisplay = document.getElementById('passwordDisplay');
 const sliderInput = document.getElementById('passSlider');
 const generate = document.getElementById('generate');
@@ -9,6 +12,8 @@ const strengthCat = document.querySelector('#strengthCat');
 
 
 
+
+//copy function on button. 
 
 btnDisplay.addEventListener('click',()=>{
 
@@ -25,7 +30,7 @@ btnDisplay.addEventListener('click',()=>{
 
 
 
-
+//function on slider to change color on slider track and assign values generated. 
 sliderInput.oninput = function(){
     let length = this.value; 
     
@@ -43,51 +48,59 @@ document.addEventListener('submit',(e) => {
     
     e.preventDefault();
     
-    const values =  captureCheckboxState();
 
-   const {useLowerCase,useNumbers,useUpperCase,useSymbols} = values; 
-const result = generatePassword(useLowerCase,useNumbers,useUpperCase,useSymbols,sliderInput.value) 
-const {password = '', strengthRate=0} = result;
 
-if(password){
+   const {useLowerCase,useNumbers,useUpperCase,useSymbols} = captureCheckboxState();
+   const {password = '', strengthRate=0} = generatePassword(useLowerCase,useNumbers,useUpperCase,useSymbols,sliderInput.value) 
 
-    inputDisplay.innerHTML = password; 
-}else{
-    inputDisplay.innerHTML = '<b>Please mark a checkbox!</b>'; 
-
-}
+    updatePasswordDisplay(password);
+    resetBarsColors();
+    updateStrengthRate(strengthRate);
+    updateStrengthCategory(strengthRate);
 
 // Reset all bars to grey
-for(let i = 0; i < bars.length; i++) {
-    bars[i].style.backgroundColor = 'grey';
-}
+
 
 // Set the first 'strengthRate' bars to red
-for(let i = 0; i < strengthRate; i++) {
-    bars[i].style.backgroundColor = '#F8CD65';
-}
+
 
 // Update the strength category text
-switch (strengthRate) {
-    case 1:
-        strengthCat.textContent = 'Too Weak';
-        break;
-    case 2:
-        strengthCat.textContent = 'Weak';
-        break;
-    case 3:
-        strengthCat.textContent = 'Medium';
-        break;
-    case 4:
-        strengthCat.textContent = 'Strong';
-        break;
-    default:
-        strengthCat.textContent = '';
-}
+
 
 }); 
 
+function updatePasswordDisplay(password){
+    if(password){
 
+        inputDisplay.innerHTML = password; 
+    }else{
+        inputDisplay.innerHTML = '<b>Please mark a checkbox!</b>'; 
+    
+    }
+    
+}
+
+function resetBarsColors(){
+   bars.forEach((bar,index)=>{
+       if(index < bars.length){
+
+           bar.style.backgroundColor = 'grey';
+       }
+   })
+
+}
+
+
+function updateStrengthRate(strengthRate){
+    for(let i = 0; i < strengthRate; i++) {
+        bars[i].style.backgroundColor = '#F8CD65';
+    }
+}
+
+function updateStrengthCategory(strengthRate){
+    const category = ['too weak','weak','medium','strong'];
+    strengthCat.textContent = category[strengthRate -1];
+}
 function captureCheckboxState(){
  
     const useUpperCase = document.getElementById('uppercase').checked; //called within the function 
@@ -99,52 +112,60 @@ function captureCheckboxState(){
 
 }
 function generatePassword(useLowerCase,useNumbers,useUpperCase,useSymbols,passwordLength){
-    let nums = '123456789'; 
-    let symbs = '!@#$%&()_+[]{}<>?';
-    let uppercase = 'ABCDEGFHIJKLMNOPQRSTUVWXYZ'; 
-    let lowercase = 'abcdefghijklmnopqrstuvwxyz'; 
-    let strengthRate = 0; 
-    
-    
+ 
+    let strengthRate = 0;
     let password = ''; 
     let charPool = '';
-    if(useUpperCase){
-        strengthRate += 1;
-        charPool += uppercase; 
-        password += uppercase[Math.floor(Math.random() * uppercase.length)]; //atleast one
+    
+    let charSet = {
+        nums:'123456789',
+        symbs:'!@#$%&()_+[]{}<>?',
+        uppercase:'ABCDEGFHIJKLMNOPQRSTUVWXYZ',
+        lowercase:'abcdefghijklmnopqrstuvwxyz',
+        
     }
+    
+    const enabledOptions = [
+        {condition: useLowerCase, chars:charSet.lowercase},
+        {condition: useUpperCase, chars:charSet.uppercase },
+        {condition:useNumbers,chars:charSet.nums},
+        {condition:useSymbols,chars:charSet.symbs},
+    ]
+    
 
-
-    if(useLowerCase){
-        strengthRate += 1;
-        charPool += lowercase; 
-        password += lowercase[Math.floor(Math.random() * lowercase.length)]; 
-    }
-
-    if(useNumbers){
-        strengthRate += 1;
-        charPool += nums; 
-        password += nums[Math.floor(Math.random() * nums.length)]; 
-
-    }
-    if(useSymbols){
-        strengthRate += 1;
-        charPool += symbs; 
-        password += symbs[Math.floor(Math.random() * symbs.length)]; 
-    }
+    enabledOptions.forEach(option=>{
+        if(option.condition){
+            strengthRate++;
+            password += getRandomChar(option.chars);
+            charPool +=option.chars;
+        }
+    });
 
     if(!charPool){
         alert('Please mark atleast one checkbox!');
         return {password:'',strengthRate:0};
     }
-
-    for(let i = password.length; i< passwordLength; i++){
-        password += charPool[Math.floor(Math.random() * charPool.length)]; 
+    
+    for(let i = password.length; i<passwordLength; i++){
+        password += getRandomChar(charPool);
     }
 
+    password = shuffleString(password);
+    // for(let i = password.length; i< passwordLength; i++){
+    //     password += charPool[Math.floor(Math.random() * charPool.length)]; 
+    // }
 
-    password = password.split('').sort(()=>0.5 - Math.random()).join('');
+
+    // password = password.split('').sort(()=>0.5 - Math.random()).join('');
     return {password,strengthRate}; 
+}
+
+function getRandomChar(charSet){
+    return charSet[Math.floor(Math.random()*charSet.length)];
+    
+}
+function shuffleString(str){
+    return str.split('').sort(()=>0.5 - Math.random()).join('');
 }
 
 

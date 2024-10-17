@@ -258,7 +258,10 @@ main{
                     border-radius: .5em;
                     background-color: #A4FFAF;
                 }
-                #submit::after{
+                #submit:hover{
+                    cursor: pointer;
+                    background-color: white;
+                    border:.1em solid #A4FFAF;
                     
                 }
 

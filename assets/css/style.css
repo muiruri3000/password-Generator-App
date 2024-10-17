@@ -191,5 +191,10 @@ main .passwordGen form .passwordComponents .submit #submit {
   border-radius: 0.5em;
   background-color: #A4FFAF;
 }
+main .passwordGen form .passwordComponents .submit #submit:hover {
+  cursor: pointer;
+  background-color: white;
+  border: 0.1em solid #A4FFAF;
+}
 
 /*# sourceMappingURL=style.css.map */
