@@ -139,7 +139,7 @@ main .passwordGen form {
   background-color: rgb(81, 77, 77);
 }
 main .passwordGen form .passwordComponents .passLengthSlider {
-  color: red;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -158,7 +158,7 @@ main .passwordGen form .passwordComponents #passSlider {
   outline: none; /* Remove outline */
   position: relative; /* Positioning for knob */
   /* Custom track styling */
-  background: linear-gradient(to right, green 0%, green 50%, lightgrey 50%, lightgrey 100%);
+  background: linear-gradient(to right, green 0%, green 0%, lightgrey 0%, lightgrey 100%);
   width: 100%;
 }
 main .passwordGen form .passwordComponents .strength {
