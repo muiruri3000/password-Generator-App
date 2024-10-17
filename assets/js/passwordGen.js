@@ -30,7 +30,7 @@ btnDisplay.addEventListener('click',()=>{
 
 
 
-//function on slider to change color on slider track and assign values generated. 
+
 sliderInput.oninput = function(){
     let length = this.value; 
     
@@ -58,13 +58,6 @@ document.addEventListener('submit',(e) => {
     updateStrengthRate(strengthRate);
     updateStrengthCategory(strengthRate);
 
-// Reset all bars to grey
-
-
-// Set the first 'strengthRate' bars to red
-
-
-// Update the strength category text
 
 
 }); 
@@ -151,12 +144,7 @@ function generatePassword(useLowerCase,useNumbers,useUpperCase,useSymbols,passwo
     }
 
     password = shuffleString(password);
-    // for(let i = password.length; i< passwordLength; i++){
-    //     password += charPool[Math.floor(Math.random() * charPool.length)]; 
-    // }
-
-
-    // password = password.split('').sort(()=>0.5 - Math.random()).join('');
+ 
     return {password,strengthRate}; 
 }
 
