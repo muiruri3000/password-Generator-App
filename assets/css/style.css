@@ -66,25 +66,22 @@ main {
   cursor: pointer;
 }
 
-/* Style the custom checkbox container */
 .customCheck {
   display: block;
   position: relative;
-  padding-left: 25px; /* Spacing for the custom checkbox */
+  padding-left: 25px;
   cursor: pointer;
   font-size: 16px;
   color: white;
   margin-bottom: 10px;
 }
 
-/* Hide the default checkbox */
 .customCheck input[type=checkbox] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-/* Style the custom checkbox (span element) */
 .spanCheck {
   position: absolute;
   top: 0;
@@ -95,24 +92,20 @@ main {
   border-radius: 4px;
 }
 
-/* When the checkbox is checked, set the background to green */
 .customCheck input[type=checkbox]:checked + .spanCheck {
   background-color: green;
 }
 
-/* Add a checkmark indicator for the checked state */
 .spanCheck:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when the checkbox is checked */
 .customCheck input[type=checkbox]:checked + .spanCheck:after {
   display: block;
 }
 
-/* Style the checkmark (tick) */
 .customCheck .spanCheck:after {
   left: 6px;
   top: 3px;
@@ -150,14 +143,13 @@ main .passwordGen form .passwordComponents #slideToValue {
   font-size: 2em;
 }
 main .passwordGen form .passwordComponents #passSlider {
-  appearance: none; /* Remove default browser appearance */
-  width: 100%; /* Full width */
-  height: 10px; /* Track height */
-  background: lightgrey; /* Grey background for track */
-  border-radius: 5px; /* Rounded corners for track */
-  outline: none; /* Remove outline */
-  position: relative; /* Positioning for knob */
-  /* Custom track styling */
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: lightgrey;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
   background: linear-gradient(to right, green 0%, green 0%, lightgrey 0%, lightgrey 100%);
   width: 100%;
 }

@@ -57,14 +57,6 @@ main{
     padding: .6em;
     flex: 2;
     font-size: 1.3rem;
-    // padding: .7em .8em;
-    // margin-bottom: .9em;
-    // font-size: 1.3rem;
-    // background-image: url('/assets/images/icon-copy.svg');
-    // background-repeat: no-repeat;
-    // background-size: 1.5em;
-    // background-color: grey;
-    // background-position: right 0.3em center;
 }
 
 
@@ -83,26 +75,22 @@ main{
     cursor: pointer;
 }
 
-/* Style the custom checkbox container */
 .customCheck {
     display: block;
     position: relative;
-    padding-left: 25px; /* Spacing for the custom checkbox */
+    padding-left: 25px; 
     cursor: pointer;
     font-size: 16px;
     color: white;
     margin-bottom:10px;
 }
 
-/* Hide the default checkbox */
 .customCheck input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     
 }
-
-/* Style the custom checkbox (span element) */
 .spanCheck {
     position: absolute;
     top: 0;
@@ -115,25 +103,22 @@ main{
    
 }
 
-/* When the checkbox is checked, set the background to green */
 .customCheck input[type="checkbox"]:checked + .spanCheck {
     background-color: green;
     
 }
 
-/* Add a checkmark indicator for the checked state */
 .spanCheck:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the checkmark when the checkbox is checked */
 .customCheck input[type="checkbox"]:checked + .spanCheck:after {
     display: block;
 }
 
-/* Style the checkmark (tick) */
+
 .customCheck .spanCheck:after {
     left: 6px;
     top: 3px;
@@ -187,34 +172,24 @@ main{
 
                 
                 #passSlider{
-                    // -webkit-appearanyce: none;
-                    // opacity: 0.7;
-                    // outline: none;
-                    
-                    appearance: none; /* Remove default browser appearance */
-                    width: 100%; /* Full width */
-                    height: 10px; /* Track height */
-                    background: lightgrey; /* Grey background for track */
-                    border-radius: 5px; /* Rounded corners for track */
-                    outline: none; /* Remove outline */
-                    position: relative; /* Positioning for knob */
+                 
+                    appearance: none;
+                    width: 100%;
+                    height: 10px; 
+                    background: lightgrey;
+                    border-radius: 5px; 
+                    outline: none; 
+                    position: relative; 
                 
-                    /* Custom track styling */
+         
                     background: linear-gradient(to right, green 0%, green 0%, lightgrey 0%, lightgrey 100%);
-                    // background: #A4FFAF;
+                  
                     width: 100%;
                 }
            
             
          
-            .checkboxGroup{
-                // display: flex;
-                // flex-wrap: wrap;
-                // align-items: center;
-                // gap: .8em;
-
-               
-              }
+       
 
               .strength{
               
