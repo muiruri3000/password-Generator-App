@@ -1,0 +1,195 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: black;
+}
+
+@font-face {
+  font-family: "JetBrainsMonovariable";
+  src: url(/assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "JetBrainsMonoItalic";
+  src: url(/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "JetBrainsMonoBold";
+  src: url(/assets/fonts/static/JetBrainsMono-Bold.ttf);
+}
+@font-face {
+  font-family: "JetBrainsMonoBoldItalic";
+  src: url(/assets/fonts/static/JetBrainsMono-BoldItalic.ttf);
+}
+main {
+  background-color: black;
+  color: white;
+}
+
+.passwordGen {
+  width: 70%;
+  margin: auto;
+  padding: 1.4em;
+}
+
+.display {
+  display: flex;
+  padding: 1.2em 0;
+  justify-content: space-between;
+}
+
+#passwordDisplay {
+  background-color: rgb(81, 77, 77);
+  padding: 0.6em;
+  flex: 2;
+  font-size: 1.3rem;
+}
+
+#btnDisplay {
+  background-color: rgb(81, 77, 77);
+  border: none;
+  padding: 0.3em;
+}
+
+#btnDisplay img {
+  width: 2.5em;
+}
+
+#btnDisplay:hover {
+  cursor: pointer;
+}
+
+/* Style the custom checkbox container */
+.customCheck {
+  display: block;
+  position: relative;
+  padding-left: 25px; /* Spacing for the custom checkbox */
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Hide the default checkbox */
+.customCheck input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Style the custom checkbox (span element) */
+.spanCheck {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* When the checkbox is checked, set the background to green */
+.customCheck input[type=checkbox]:checked + .spanCheck {
+  background-color: green;
+}
+
+/* Add a checkmark indicator for the checked state */
+.spanCheck:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when the checkbox is checked */
+.customCheck input[type=checkbox]:checked + .spanCheck:after {
+  display: block;
+}
+
+/* Style the checkmark (tick) */
+.customCheck .spanCheck:after {
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: 1px solid black;
+  border-width: 0 2px 4px 0;
+  transform: rotate(45deg);
+}
+
+main {
+  max-width: 600px;
+  margin: 1em auto;
+  padding: 1.5em 0.8em;
+  display: flex;
+  flex-direction: column;
+}
+main .passwordGen h1 {
+  font-size: 1.2em;
+  text-align: center;
+}
+main .passwordGen form {
+  padding: 1em;
+  background-color: rgb(81, 77, 77);
+}
+main .passwordGen form .passwordComponents .passLengthSlider {
+  color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+main .passwordGen form .passwordComponents #slideToValue {
+  color: #A4FFAF;
+  font-size: 2em;
+}
+main .passwordGen form .passwordComponents #passSlider {
+  appearance: none; /* Remove default browser appearance */
+  width: 100%; /* Full width */
+  height: 10px; /* Track height */
+  background: lightgrey; /* Grey background for track */
+  border-radius: 5px; /* Rounded corners for track */
+  outline: none; /* Remove outline */
+  position: relative; /* Positioning for knob */
+  /* Custom track styling */
+  background: linear-gradient(to right, green 0%, green 50%, lightgrey 50%, lightgrey 100%);
+  width: 100%;
+}
+main .passwordGen form .passwordComponents .strength {
+  opacity: 0.5;
+}
+main .passwordGen form .passwordComponents .med {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  padding: 1.5em;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+main .passwordGen form .passwordComponents .levels {
+  display: flex;
+  align-items: center;
+}
+main .passwordGen form .passwordComponents .levl {
+  background: rgb(248, 247, 247);
+  height: 20px;
+  width: 7px;
+  margin-left: 0.5em;
+}
+main .passwordGen form .passwordComponents .submit #submit {
+  margin-top: 1em;
+  width: 100%;
+  padding: 1em 0;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #A4FFAF;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+  
+
+<main>
+  <div class="passwordGen">
+    <h1>Password Generator</h1>
+
+
+
+      <div class="display">
+
+       
+        <div id="passwordDisplay"> </div>
+        <button id="btnDisplay"> <img src="/assets/images/icon-copy.svg"> </button>
+
+      </div>
+      <form action="" method="post">
+      <div class="passwordComponents">
+        <div class="passLengthSlider">
+          <div>
+            <p>Character Length</p>
+          </div>
+          <div id="slideToValue">
+            
+          </div>
+        </div>
+        <div class="slider">
+          <input type="range" min="4" max="25" name="passSlider" id="passSlider">
+
+        </div>
+        <div class="checkboxGroup">
+
+          <label for="uppercase" class="customCheck">
+            <input type="checkbox"   class="myCheck" name="uppercase" id="uppercase" value="uppercase">
+       <span class="spanCheck"></span>
+            
+          Include Uppercase Letters
+        </label>
+              
+         
+        <label for="lowercase" class="customCheck">
+            <input type="checkbox" class="myCheck"   name="lowercase" id="lowercase" value="lowercase">
+            <span class="spanCheck"></span>
+            Include Lowercase Letters
+          </label>
+         
+          <label for="numbers" class="customCheck">
+            <input type="checkbox" class="myCheck"   name="numbers" id="numbers">
+            <span class="spanCheck"></span>
+            Include Numbers
+          </label>
+        
+          <label for="symbols" class="customCheck">
+            <input type="checkbox" class="myCheck"   name="symbols" id="symbols">
+            <span class="spanCheck"></span>
+            Include Symbols
+          </label>
+          
+        </div>
+
+
+        <div class="streng">
+
+          
+          <div class="med">
+            <div class="strength">STRENGTH</div>
+              <div class="levels">
+         
+               
+                  <span id="strengthCat">Medium</span>
+             
+                <div id="level1" class="levl"></div>
+                <div id="level2" class="levl"></div>
+                <div id="level3" class="levl"></div>
+                <div id="level4" class="levl"></div>
+              </div> 
+           
+          </div>
+        </div>
+
+        <div class="submit">
+          <button type="submit" id="submit"> Generate <img src="./assets/images/icon-arrow-right.svg"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+
+
+<!-- 
+  
+
+  P4$5W0rD!
+
+-->
+
+<script src="/assets/js/passwordGen.js"> </script>
+</body>
+</html>

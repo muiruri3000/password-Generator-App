@@ -1,0 +1,275 @@
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+html{
+    font-size: 16px;
+}
+
+body{
+    background-color: black;
+}
+@font-face {
+    font-family: 'JetBrainsMonovariable';
+    src: url(/assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'JetBrainsMonoItalic';
+    src: url(/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'JetBrainsMonoBold';
+    src: url(/assets/fonts/static/JetBrainsMono-Bold.ttf);
+}
+@font-face {
+    font-family: 'JetBrainsMonoBoldItalic';
+    src: url(/assets/fonts/static/JetBrainsMono-BoldItalic.ttf);
+}
+
+main{
+    background-color: black;
+    color: white;
+}
+.passwordGen{
+    width: 70%;
+    margin: auto;
+    padding: 1.4em;
+  
+}
+.display{
+    display: flex;
+    padding: 1.2em 0;
+    justify-content: space-between;
+   
+}
+#passwordDisplay{
+  
+   background-color: rgb(81, 77, 77);
+    padding: .6em;
+    flex: 2;
+    font-size: 1.3rem;
+    // padding: .7em .8em;
+    // margin-bottom: .9em;
+    // font-size: 1.3rem;
+    // background-image: url('/assets/images/icon-copy.svg');
+    // background-repeat: no-repeat;
+    // background-size: 1.5em;
+    // background-color: grey;
+    // background-position: right 0.3em center;
+}
+
+
+#btnDisplay{
+ 
+    background-color: rgb(81, 77, 77);
+    border: none;
+    padding: .3em;
+    
+}
+#btnDisplay img{
+    width: 2.5em;
+}
+
+#btnDisplay:hover{
+    cursor: pointer;
+}
+
+/* Style the custom checkbox container */
+.customCheck {
+    display: block;
+    position: relative;
+    padding-left: 25px; /* Spacing for the custom checkbox */
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    margin-bottom:10px;
+}
+
+/* Hide the default checkbox */
+.customCheck input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+
+/* Style the custom checkbox (span element) */
+.spanCheck {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    
+    border-radius: 4px;
+   
+}
+
+/* When the checkbox is checked, set the background to green */
+.customCheck input[type="checkbox"]:checked + .spanCheck {
+    background-color: green;
+    
+}
+
+/* Add a checkmark indicator for the checked state */
+.spanCheck:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when the checkbox is checked */
+.customCheck input[type="checkbox"]:checked + .spanCheck:after {
+    display: block;
+}
+
+/* Style the checkmark (tick) */
+.customCheck .spanCheck:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: 1px solid black;
+    border-width: 0 2px 4px 0;
+    transform: rotate(45deg);
+    
+}
+
+
+
+
+main{
+ 
+    max-width: 600px;
+    margin: 1em auto;
+    padding: 1.5em .8em;
+    display: flex;
+    flex-direction: column;
+
+
+
+    .passwordGen{
+        h1{
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        form{
+           padding: 1em;
+           background-color: rgb(81, 77, 77);
+
+            .passwordComponents{
+                .passLengthSlider{
+                    color:red;
+                    display: flex;
+                    flex-direction: row;
+                    align-items:baseline;
+                    justify-content: space-between;
+                         
+   
+                }
+                #slideToValue{
+                    color: #A4FFAF;
+                    font-size: 2em;
+                    
+                }
+            
+
+                
+                #passSlider{
+                    // -webkit-appearanyce: none;
+                    // opacity: 0.7;
+                    // outline: none;
+                    
+                    appearance: none; /* Remove default browser appearance */
+                    width: 100%; /* Full width */
+                    height: 10px; /* Track height */
+                    background: lightgrey; /* Grey background for track */
+                    border-radius: 5px; /* Rounded corners for track */
+                    outline: none; /* Remove outline */
+                    position: relative; /* Positioning for knob */
+                
+                    /* Custom track styling */
+                    background: linear-gradient(to right, green 0%, green 50%, lightgrey 50%, lightgrey 100%);
+                    // background: #A4FFAF;
+                    width: 100%;
+                }
+           
+            
+         
+            .checkboxGroup{
+                // display: flex;
+                // flex-wrap: wrap;
+                // align-items: center;
+                // gap: .8em;
+
+               
+              }
+
+              .strength{
+              
+                opacity: .5;
+            }
+            .med{
+                display: flex;
+                background-color: black;
+                align-items: center;
+                padding: 1.5em;
+                justify-content: space-between;
+                font-size: .7rem;
+
+            }
+              .levels{
+             
+                display: flex;
+               
+                
+                align-items: center;
+                
+              }
+
+              .levl{
+               
+                background: rgb(248, 247, 247);
+                height:20px;
+                width:7px;
+                
+                margin-left: .5em;
+              }
+
+              
+            .submit{
+                #submit{
+                    margin-top: 1em;
+                    width: 100%;
+                    padding: 1em 0;
+                    font-size: 1.2rem;
+                    border: none;
+                    border-radius: .5em;
+                    background-color: #A4FFAF;
+                }
+                #submit::after{
+                    
+                }
+
+            }
+         
+            }
+
+            
+
+        }
+        
+    }
+    
+}
